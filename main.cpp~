@@ -1,0 +1,8 @@
+#include <iostream>
+#include "ssr.h"
+using namespace std;
+
+int main(){
+	List l("asdas.txt");
+	l.writeNewJob("Visit Jack",false);
+}

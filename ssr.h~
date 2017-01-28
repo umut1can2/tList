@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
+
+using namespace std;
+
+class List
+{
+public:
+	List(string f);
+	string filePath;
+	string getfPath();
+	void writeNewJob(string job,bool check);
+};
+
+List::List(string f)
+{
+this->filePath=f;
+}
+
+string List::getfPath()
+{
+	return filePath;
+}
+
+void List::writeNewJob(string job,bool check)
+{
+	fstream j,c;
+	j.open("/home/ticop/Masaüstü/tList/jobs.data", ios::app);
+	c.open("/home/ticop/Masaüstü/tList/check.data", ios::app);
+
+	j << job;
+	c << check;
+
+	j.close();
+	c.close();
+
+}
